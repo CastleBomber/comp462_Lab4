@@ -151,6 +151,7 @@ int main(int argc, char* argv[]){
        led2.turnOn();
        led3.turnOn();
        led4.turnOn();
+       counter = 0;
      }
       usleep(FLASH_DELAY);         // sleep for 1s
 
