@@ -4,6 +4,9 @@
 *    This program can be used to easliy control multiple LEDS using a class.
 *    This program uses C++11 for the to_string() function and therefore must
 *    be compiled with the -std=c++11 flag.
+*
+*    Editor: Richie Romero CastleBomber
+*    COMP462 Lab 4
 */
 
 #include<iostream>
