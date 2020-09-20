@@ -1,10 +1,6 @@
 /** Simple Sysfs LED control program - written by Derek Molloy
 *    simple OOP  struture for the Exploring Raspberry Pi
 *
-*    This program can be used to easliy control multiple LEDS using a class.
-*    This program uses C++11 for the to_string() function and therefore must
-*    be compiled with the -std=c++11 flag.
-*
 *    Editor: Richie Romero CastleBomber
 *    COMP462 Lab 4
 */
@@ -15,7 +11,7 @@
 #include<unistd.h>         // for the microsecond sleep function
 using namespace std;
 #define GPIO         "/sys/class/gpio/"
-#define FLASH_DELAY  50000 // 50 milliseconds
+#define FLASH_DELAY  1000000 // 1 second
 
 class LED{
    private:                // the following is part of the implementation
@@ -68,20 +64,101 @@ LED::~LED(){  // The destructor unexports the sysfs GPIO entries
    writeSysfs(string(GPIO), "unexport", to_string(gpioNumber));
 }
 
-int main(int argc, char* argv[]){  // the main function start point
+// 4 LEDs used to display 0-15 via binary representaion
+int main(int argc, char* argv[]){
    cout << "Starting the makeLEDs program" << endl;
-   LED led1(4), led2(17);          // create two LED objects
-   cout << "Flashing the LEDs for 5 seconds" << endl;
-   for(int i=0; i<50; i++){        // LEDs will alternate
-      led1.turnOn();               // turn GPIO4 on
-      led2.turnOff();              // turn GPIO17 off
-      usleep(FLASH_DELAY);         // sleep for 50ms
-      led1.turnOff();              // turn GPIO4 off
-      led2.turnOn();               // turn GPIO17 on
-      usleep(FLASH_DELAY);         // sleep for 50ms
+   LED led1(21), led2(6), led3(24), led4(4);          // create four LED objects
+   cout << "Flashing the LEDs for X seconds" << endl;
+
+   for(int counter=0; counter<=15; counter++){        // LEDs will alternate
+     if(counter == 0){
+       led1.turnOff();
+       led2.turnOff();
+       led3.turnOff();
+       led4.turnOff();
+     }elif(counter == 1){
+       led1.turnOn();
+       led2.turnOff();
+       led3.turnOff();
+       led4.turnOff();
+     }elif(counter == 2){
+       led1.turnOff();
+       led2.turnOn();
+       led3.turnOff();
+       led4.turnOff();
+     }elif(counter == 3){
+       led1.turnOn();
+       led2.turnOn();
+       led3.turnOff();
+       led4.turnOff();
+     }elif(counter == 4){
+       led1.turnOff();
+       led2.turnOff();
+       led3.turnOn();
+       led4.turnOff();
+     }elif(counter == 5){
+       led1.turnOn();
+       led2.turnOff();
+       led3.turnOn();
+       led4.turnOff();
+     }elif(counter == 6){
+       led1.turnOff();
+       led2.turnOn();
+       led3.turnOn();
+       led4.turnOff();
+     }elif(counter == 7){
+       led1.turnOn();
+       led2.turnOn();
+       led3.turnOn();
+       led4.turnOff();
+     }elif(counter == 8){
+       led1.turnOff();
+       led2.turnOff();
+       led3.turnOff();
+       led4.turnOn();
+     }elif(counter == 9){
+       led1.turnOn();
+       led2.turnOff();
+       led3.turnOff();
+       led4.turnOn();
+     }elif(counter == 10){
+       led1.turnOff();
+       led2.turnOn();
+       led3.turnOff();
+       led4.turnOn();
+     }elif(counter == 11){
+       led1.turnOn();
+       led2.turnOn();
+       led3.turnOff();
+       led4.turnOn();
+     }elif(counter == 12){
+       led1.turnOff();
+       led2.turnOff();
+       led3.turnOn();
+       led4.turnOn();
+     }elif(counter == 13){
+       led1.turnOn();
+       led2.turnOff();
+       led3.turnOn();
+       led4.turnOn();
+     }elif(counter == 14){
+       led1.turnOff();
+       led2.turnOn();
+       led3.turnOn();
+       led4.turnOn();
+     }elif(counter == 15){
+       led1.turnOn();
+       led2.turnOn();
+       led3.turnOn();
+       led4.turnOn();
+     }
+      usleep(FLASH_DELAY);         // sleep for 1s
+
    }
    led1.displayState();            // display final GPIO4 state
    led2.displayState();            // display final GPIO17 state
+   led3.displayState();
+   led4.displayState();
    cout << "Finished the makeLEDs program" << endl;
    return 0;
 }
