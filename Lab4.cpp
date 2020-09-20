@@ -76,77 +76,77 @@ int main(int argc, char* argv[]){
        led2.turnOff();
        led3.turnOff();
        led4.turnOff();
-     }elif(counter == 1){
+     }else if(counter == 1){
        led1.turnOn();
        led2.turnOff();
        led3.turnOff();
        led4.turnOff();
-     }elif(counter == 2){
+     }else if(counter == 2){
        led1.turnOff();
        led2.turnOn();
        led3.turnOff();
        led4.turnOff();
-     }elif(counter == 3){
+     }else if(counter == 3){
        led1.turnOn();
        led2.turnOn();
        led3.turnOff();
        led4.turnOff();
-     }elif(counter == 4){
+     }else if(counter == 4){
        led1.turnOff();
        led2.turnOff();
        led3.turnOn();
        led4.turnOff();
-     }elif(counter == 5){
+     }else if(counter == 5){
        led1.turnOn();
        led2.turnOff();
        led3.turnOn();
        led4.turnOff();
-     }elif(counter == 6){
+     }else if(counter == 6){
        led1.turnOff();
        led2.turnOn();
        led3.turnOn();
        led4.turnOff();
-     }elif(counter == 7){
+     }else if(counter == 7){
        led1.turnOn();
        led2.turnOn();
        led3.turnOn();
        led4.turnOff();
-     }elif(counter == 8){
+     }else if(counter == 8){
        led1.turnOff();
        led2.turnOff();
        led3.turnOff();
        led4.turnOn();
-     }elif(counter == 9){
+     }else if(counter == 9){
        led1.turnOn();
        led2.turnOff();
        led3.turnOff();
        led4.turnOn();
-     }elif(counter == 10){
+     }else if(counter == 10){
        led1.turnOff();
        led2.turnOn();
        led3.turnOff();
        led4.turnOn();
-     }elif(counter == 11){
+     }else if(counter == 11){
        led1.turnOn();
        led2.turnOn();
        led3.turnOff();
        led4.turnOn();
-     }elif(counter == 12){
+     }else if(counter == 12){
        led1.turnOff();
        led2.turnOff();
        led3.turnOn();
        led4.turnOn();
-     }elif(counter == 13){
+     }else if(counter == 13){
        led1.turnOn();
        led2.turnOff();
        led3.turnOn();
        led4.turnOn();
-     }elif(counter == 14){
+     }else if(counter == 14){
        led1.turnOff();
        led2.turnOn();
        led3.turnOn();
        led4.turnOn();
-     }elif(counter == 15){
+     }else if(counter == 15){
        led1.turnOn();
        led2.turnOn();
        led3.turnOn();
